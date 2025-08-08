@@ -3,13 +3,15 @@
     "builds": [
         {
             "src": "tuelinh_real_estate/wsgi.py",
-            "use": "@vercel/python"
+            "use": "@vercel/python",
+            "config": { "maxLambdaSize": "15mb" }
         },
         {
             "src": "build_files.sh",
             "use": "@vercel/static-build",
             "config": {
-                "distDir": "staticfiles"
+                "distDir": "staticfiles",
+                "zeroConfig": true
             }
         }
     ],

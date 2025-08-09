@@ -2,11 +2,11 @@
     "version": 2,
     "builds": [
         {
-            "src": "api/wsgi.py",
+            "src": "tuelinh_real_estate/wsgi.py",
             "use": "@vercel/python",
             "config": {
                 "maxLambdaSize": "15mb",
-                "runtime": "python3.9"
+                "runtime": "python3.11.3"
             }
         }
     ],
@@ -16,12 +16,8 @@
             "dest": "/static/$1"
         },
         {
-            "src": "/media/(.*)",
-            "dest": "/media/$1"
-        },
-        {
             "src": "/(.*)",
-            "dest": "api/wsgi.py"
+            "dest": "tuelinh_real_estate/wsgi.py"
         }
     ]
 }
